@@ -1,7 +1,7 @@
 import { useState, useRef ,useContext} from "react";
 
 import classes from "./AuthForm.module.css";
-import AuthContext from "../../store/Auth-context";
+import AuthContext from "../../store/AuthContext";
 
 const AuthForm = () => {
  const authCtx=useContext(AuthContext);
@@ -56,7 +56,8 @@ const AuthForm = () => {
       })
       .then((data) => {
         console.log(data.idToken);
-        authCtx.login(data.idToken);
+        const token= data.idToken;
+        authCtx.login(token);
       })
       .catch((err) => {
         console.log(err.message);

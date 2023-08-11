@@ -19,7 +19,7 @@ export const  AuthContextProvider=(props)=>{
      }
 
      
-     const contentValue={
+     const contextValue={
         token:token,
         isLoggedIn:userIsLoggedIn,
         login:loginHandler,
@@ -28,7 +28,7 @@ export const  AuthContextProvider=(props)=>{
      }
 
 
-    return <AuthContext.Provider value={contentValue}> {props.children}</AuthContext.Provider>
+    return <AuthContext.Provider value={contextValue}> {props.children}</AuthContext.Provider>
 
 }
 
